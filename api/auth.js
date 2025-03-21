@@ -1,19 +1,17 @@
-import axiosInstance from "./axiosInstance";
+import { AxiosInstance } from './axiosInstance'
 
-export const login = async (data) => {
-  try {
-    const response = await axiosInstance.post("/users/login", {data});
-    return response.data;
-  } catch (error) {
-    console.log(error);
-  }
+export const login = async (formData) => {
+  const response = await AxiosInstance(`/login`, {
+    method: "POST",
+    data: formData,
+  });
+  return response;
 };
 
-export const register = async (data) => {
-  try {
-    const response = await axiosInstance.post("/users/register", {data});
-    return response.data;
-  } catch (error) {
-    console.log(error);
-  }
+export const registration = async (formData) => {
+  const response = await AxiosInstance(`/signup`, {
+      method: "POST",
+      data: formData,
+  });
+  return response;
 };

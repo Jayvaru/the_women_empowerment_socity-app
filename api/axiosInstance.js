@@ -1,7 +1,9 @@
-import axios from "axios";
+import axios from 'axios'
 
-const axiosInstance = axios.create({
-  baseURL: "https://women-empowering-b45b5-default-rtdb.firebaseio.com/",
-});
-
-export default axiosInstance;
+export const AxiosInstance = axios.create({
+  baseURL: 'http://localhost:5000/api',
+  headers: {
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin': '*',
+  },
+})
